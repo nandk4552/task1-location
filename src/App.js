@@ -140,12 +140,12 @@ function App() {
         <div className="container my-3">
           <div className="row">
             <div className="col-md-3">
-              <h1 className="text-center">Search</h1>
+              <h1 className="heading-title">Search</h1>
 
               <SearchBar onSelectPlace={handleSelectPlace} />
             </div>
             <div className="col-md-6 position-relative">
-              <h1 className="text-center">Maps</h1>
+              <h1 className="heading-title">Maps</h1>
               <MapContainer
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
@@ -156,27 +156,10 @@ function App() {
               {selectedPlace && <PlaceMarker place={selectedPlace} />}
             </div>
             <div className="col-md-3 scrollable-sidebar">
-              <ResultsSidebar
+              <ResultsSidebar className
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
-              >
-                <div className="verbalized-list">
-                  <VerbalizedList
-                    searchResults={searchResults}
-                    onHoverPlace={handleHoverPlace}
-                    onClickPlace={handleClickPlace}
-                  />
-                </div>
-                {/* {sidebarVideos?.length > 0 ? (
-                  <div className="instagram-videos">
-                    {sidebarVideos?.map((video) => (
-                      <InstagramVideo key={video.id} url={video.url} />
-                    ))}
-                  </div>
-                ) : (
-                  <div className="no-videos">No videos found</div>
-                )} */}
-              </ResultsSidebar>
+              ></ResultsSidebar>
               <div className="scrollable-content">
                 Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut,
                 dolor exercitationem provident voluptate labore maiores dolorem

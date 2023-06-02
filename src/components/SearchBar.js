@@ -63,7 +63,7 @@ const SearchBar = ({ onSelectPlace }) => {
         </div>
       </form>
       {searchResults.length > 0 && (
-        <div className="search-results">
+        <div className="search-results my-3">
           {searchResults.map(({ city, places }) => (
             <div key={city}>
               <strong>{city}</strong>

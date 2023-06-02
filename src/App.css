@@ -120,6 +120,14 @@
     padding: 15px !important;
 }
 
+.heading-title {
+    text-align: center !important;
+    font-size: 1.8rem !important;
+    margin: 1rem !important;
+    color: var(--black) !important;
+    text-transform: uppercase !important;
+}
+
 @media screen and (max-width: 600px) {
     .map-container {
         width: 100% !important;

@@ -7,7 +7,6 @@ const MapContainer = ({ google, selectedPlace, searchResults }) => {
   const mapStyles = {
     width: "80%",
     height: "500px",
-    overflow: "hidden",
   };
 
   return (
