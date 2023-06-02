@@ -49,12 +49,13 @@ const SearchBar = ({ onSelectPlace }) => {
   return (
     <div>
       <form onSubmit={handleSubmit}>
-        <div className="">
+        <div className="d-flex">
           <input
             type="text"
             value={searchQuery}
             onChange={handleSearchChange}
             placeholder="Search for a place..."
+            className="form-control me-2"
           />
           <button type="submit" className="btn btn-sm btn-secondary">
             Search

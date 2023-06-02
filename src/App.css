@@ -107,13 +107,17 @@
 }
 
 .scrollable-sidebar {
-    overflow-y: auto;
-    max-height: 100vh;
-    /* Adjust the max height as needed */
+    height: 100% !important;
+    overflow-y: auto !important;
 }
 
 .scrollable-content {
-    /* padding: 10px; */
+    height: 100% !important;
+    overflow-y: auto !important;
+}
+
+.scrollable-content-inner {
+    padding: 15px !important;
 }
 
 @media screen and (max-width: 600px) {

@@ -5,7 +5,7 @@ const apiKey = process.env.REACT_APP_GOOGLE_MAPS_API_KEY;
 
 const MapContainer = ({ google, selectedPlace, searchResults }) => {
   const mapStyles = {
-    width: "40%",
+    width: "80%",
     height: "500px",
     overflow: "hidden",
   };

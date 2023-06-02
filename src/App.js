@@ -137,12 +137,15 @@ function App() {
     <>
       <Header />
       <div style={{ minHeight: "100vh" }}>
-        <div className="container my-3 overflow-x-hidden">
+        <div className="container my-3">
           <div className="row">
             <div className="col-md-3">
+              <h1 className="text-center">Search</h1>
+
               <SearchBar onSelectPlace={handleSelectPlace} />
             </div>
-            <div className="col-md-6 overflow-scroll">
+            <div className="col-md-6 position-relative">
+              <h1 className="text-center">Maps</h1>
               <MapContainer
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
@@ -164,7 +167,7 @@ function App() {
                     onClickPlace={handleClickPlace}
                   />
                 </div>
-                {sidebarVideos?.length > 0 ? (
+                {/* {sidebarVideos?.length > 0 ? (
                   <div className="instagram-videos">
                     {sidebarVideos?.map((video) => (
                       <InstagramVideo key={video.id} url={video.url} />
@@ -172,10 +175,21 @@ function App() {
                   </div>
                 ) : (
                   <div className="no-videos">No videos found</div>
-                )}
+                )} */}
               </ResultsSidebar>
               <div className="scrollable-content">
-                Place your scrollable content here
+                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut,
+                dolor exercitationem provident voluptate labore maiores dolorem
+                rem, debitis nisi quasi natus iure ea quisquam non tenetur eius
+                suscipit. Maxime cupiditate soluta ipsam itaque, illum excepturi
+                porro dolorem maiores molestias possimus perspiciatis illo
+                ducimus adipisci, omnis aspernatur autem fuga provident
+                quisquam! Dolore optio corrupti aliquam quisquam commodi at
+                itaque laudantium deserunt ad magni, dolorem fugit inventore ut?
+                Magni, rerum placeat saepe impedit quia dolorum. Officia eos
+                dolor qui suscipit nihil vel a quia. Vitae iure distinctio
+                inventore amet, a omnis harum neque aut. Harum, quibusdam
+                dolores molestiae sunt accusamus nam minima?{" "}
               </div>
             </div>
           </div>

@@ -1,13 +1,26 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import InstagramVideo from "./InstagramVideo";
-
+import placeData from "../data/places.json";
 const ResultsSidebar = ({ selectedPlace, searchResults }) => {
-  const places =
-    searchResults && searchResults.length > 0 ? searchResults[0].places : [];
+  const [places, setPlaces] = useState([]);
+
+  useEffect(() => {
+    fetch(placeData)
+      .then((response) => response.json())
+      .then((data) => setPlaces(data))
+      .catch((error) => {
+        console.error("Error fetching places:", error);
+      });
+  }, []);
 
   return (
     <div className="results-sidebar">
-      <h3>{selectedPlace ? selectedPlace.name : "No Place Selected"}</h3>
+      <div className="">
+        <h1 className="text-secondary fs-2 me-3">Search Result: </h1>
+        <h2 className="fs-4">
+          {selectedPlace ? selectedPlace.name : "No Place Selected"}
+        </h2>
+      </div>
       {places.length > 0 ? (
         <div className="results-list">
           {places.map((place) => (
