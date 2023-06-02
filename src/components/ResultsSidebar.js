@@ -26,12 +26,11 @@ const ResultsSidebar = ({ selectedPlace, searchResults }) => {
           {selectedPlace ? selectedPlace.name : "No Place Selected"}
         </h2>
       </div>
-
+      <h1 className="fs-5 text-bg-dark p-3 text-center text-uppercase">
+        Suitable places
+      </h1>
       {places?.length > 0 ? (
-        <div className="results-list ">
-          <h1 className="fs-5 text-bg-dark p-3 text-center text-uppercase">
-            Suitable places
-          </h1>
+        <div className="results-list scrollable">
           {places?.map((place) => (
             <div key={place} className="result-item">
               <hr />

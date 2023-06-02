@@ -128,6 +128,12 @@
     text-transform: uppercase !important;
 }
 
+.results-list.scrollable {
+    height: 200px !important; 
+    /* Set the desired height */
+    overflow-y: auto !important; 
+    /* Enable vertical scrolling */
+}
 @media screen and (max-width: 600px) {
     .map-container {
         width: 100% !important;

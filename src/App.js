@@ -159,25 +159,30 @@ function App() {
               />
               {selectedPlace && <PlaceMarker place={selectedPlace} />}
             </div>
-            <div className="col-md-3 scrollable-sidebar my-3">
+            <div className="col-md-3  my-3">
               <ResultsSidebar
                 className
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
               ></ResultsSidebar>
-              <div className="scrollable-content">
-                Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut,
-                dolor exercitationem provident voluptate labore maiores dolorem
-                rem, debitis nisi quasi natus iure ea quisquam non tenetur eius
-                suscipit. Maxime cupiditate soluta ipsam itaque, illum excepturi
-                porro dolorem maiores molestias possimus perspiciatis illo
-                ducimus adipisci, omnis aspernatur autem fuga provident
-                quisquam! Dolore optio corrupti aliquam quisquam commodi at
-                itaque laudantium deserunt ad magni, dolorem fugit inventore ut?
-                Magni, rerum placeat saepe impedit quia dolorum. Officia eos
-                dolor qui suscipit nihil vel a quia. Vitae iure distinctio
-                inventore amet, a omnis harum neque aut. Harum, quibusdam
-                dolores molestiae sunt accusamus nam minima?{" "}
+              <div className=" my-3">
+                <h1 className="fs-5 mb-3 text-bg-dark p-3 text-center text-uppercase">
+                  Scrollable text
+                </h1>
+                <div className="results-list scrollable">
+                  Lorem, ipsum dolor sit amet consectetur adipisicing elit. Ut,
+                  dolor exercitationem provident voluptate labore maiores
+                  dolorem rem, debitis nisi quasi natus iure ea quisquam non
+                  tenetur eius suscipit. Maxime cupiditate soluta ipsam itaque,
+                  illum excepturi porro dolorem maiores molestias possimus
+                  perspiciatis illo ducimus adipisci, omnis aspernatur autem
+                  fuga provident quisquam! Dolore optio corrupti aliquam
+                  quisquam commodi at itaque laudantium deserunt ad magni,
+                  dolorem fugit inventore ut? Magni, rerum placeat saepe impedit
+                  quia dolorum. Officia eos dolor qui suscipit nihil vel a quia.
+                  Vitae iure distinctio inventore amet, a omnis harum neque aut.
+                  Harum, quibusdam dolores molestiae sunt accusamus nam minima?{" "}
+                </div>
               </div>
             </div>
           </div>
