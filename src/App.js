@@ -139,13 +139,17 @@ function App() {
       <div style={{ minHeight: "100vh" }}>
         <div className="container my-3">
           <div className="row">
-            <div className="col-md-3">
-              <h1 className="heading-title">Search</h1>
+            <div className="col-md-3  my-3">
+              <h1 className="fs-5 text-bg-dark p-3 text-center text-uppercase">
+                Search
+              </h1>
 
               <SearchBar onSelectPlace={handleSelectPlace} />
             </div>
-            <div className="col-md-6 position-relative">
-              <h1 className="heading-title">Maps</h1>
+            <div className="col-md-6 position-relative my-3">
+              <h1 className="fs-5 mb-3 text-bg-dark p-3 text-center text-uppercase">
+                Maps
+              </h1>
               <MapContainer
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
@@ -155,8 +159,9 @@ function App() {
               />
               {selectedPlace && <PlaceMarker place={selectedPlace} />}
             </div>
-            <div className="col-md-3 scrollable-sidebar">
-              <ResultsSidebar className
+            <div className="col-md-3 scrollable-sidebar my-3">
+              <ResultsSidebar
+                className
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
               ></ResultsSidebar>

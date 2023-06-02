@@ -16,7 +16,10 @@ const ResultsSidebar = ({ selectedPlace, searchResults }) => {
   return (
     <div className="results-sidebar">
       <div className="">
-        <h1 className="heading-title" style={{ fontSize: "1rem" }}>
+        <h1
+          className="fs-5 mb-3 text-bg-dark p-3 text-center text-uppercase"
+          style={{ fontSize: "1rem" }}
+        >
           Search Result:{" "}
         </h1>
         <h2 className="fs-5">
