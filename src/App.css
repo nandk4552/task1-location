@@ -129,11 +129,35 @@
 }
 
 .results-list.scrollable {
-    height: 200px !important; 
+    height: 200px !important;
     /* Set the desired height */
-    overflow-y: auto !important; 
+    overflow-y: auto !important;
     /* Enable vertical scrolling */
 }
+
+.map-item {
+    background-color: #f39c12 !important;
+    display: flex !important;
+    justify-content: center !important;
+    align-items: center !important;
+    height: 100% !important;
+    width: 100% !important;
+    border-radius: 20px !important;
+    color: white !important;
+    cursor: pointer !important;
+}
+
+.map-item:hover {
+    background-color: #333 !important;
+
+}
+
+.map-item p {
+    margin: 10px 0 !important;
+}
+
+
+
 @media screen and (max-width: 600px) {
     .map-container {
         width: 100% !important;

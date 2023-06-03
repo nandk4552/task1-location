@@ -1,84 +1,28 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import placesData from "../data/places.json";
-
 const SearchBar = ({ onSelectPlace }) => {
-  const [searchResults, setSearchResults] = useState([]);
-  const [originalResults, setOriginalResults] = useState([]);
-  const [searchQuery, setSearchQuery] = useState("");
+  const [selectedPlace, setSelectedPlace] = useState("");
 
-  useEffect(() => {
-    setOriginalResults(placesData);
-  }, []);
+  const handleSelect = (event) => {
+    const selectedPlaceName = event.target.value;
 
-  const handleSearchChange = (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-
-    // Filter the places based on the search query
-    const filteredResults = Object.entries(originalResults).reduce(
-      (acc, [city, places]) => {
-        const filteredPlaces = places.filter((place) =>
-          place.toLowerCase().includes(query.toLowerCase())
-        );
-        if (filteredPlaces.length > 0) {
-          acc.push({
-            city,
-            places: filteredPlaces,
-          });
-        }
-        return acc;
-      },
-      []
-    );
-
-    setSearchResults(filteredResults);
-  };
-
-  const handleSelectPlace = (place) => {
-    onSelectPlace(place);
-  };
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (searchQuery.trim() !== "") {
-      handleSelectPlace(searchQuery);
-      setSearchQuery("");
-    }
+    setSelectedPlace(selectedPlaceName);
+    onSelectPlace(selectedPlaceName);
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <div className="d-flex">
-          <input
-            type="text"
-            value={searchQuery}
-            onChange={handleSearchChange}
-            placeholder="Search for a place..."
-            className="form-control me-2"
-          />
-          <button type="submit" className="btn btn-sm btn-secondary">
-            Search
-          </button>
-        </div>
-      </form>
-      {searchResults.length > 0 && (
-        <div className="search-results my-3">
-          {searchResults.map(({ city, places }) => (
-            <div key={city}>
-              <strong>{city}</strong>
-              <ul>
-                {places.map((place) => (
-                  <li key={place} onClick={() => handleSelectPlace(place)}>
-                    {place}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
-        </div>
-      )}
-    </div>
+    <select
+      className="form-select form-select-md mx-auto"
+      value={selectedPlace}
+      onChange={handleSelect}
+    >
+      <option value="">Select a place</option>
+      {Object.keys(placesData).map((placeName) => (
+        <option key={placeName} value={placeName}>
+          {placeName}
+        </option>
+      ))}
+    </select>
   );
 };
 

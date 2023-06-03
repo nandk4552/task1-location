@@ -5,9 +5,7 @@ import Footer from "./components/Footer";
 import SearchBar from "./components/SearchBar";
 import MapContainer from "./components/Map";
 import ResultsSidebar from "./components/ResultsSidebar";
-import VerbalizedList from "./components/VerbalizedList";
 import PlaceMarker from "./components/PlaceMarker";
-import InstagramVideo from "./components/InstagramVideo";
 import placesData from "./data/places.json";
 
 function App() {
@@ -71,38 +69,6 @@ function App() {
     fetchInstagramVideos(place.name);
   };
 
-  //     //* i got an error because i didnt have the api key of graph instagram i created a basic one but didnt work for me
-  // const fetchInstagramVideos = async (placeName) => {
-  //   try {
-  //     const accessToken = process.env.REACT_APP_INSTA_API_KEY; // Replace with your Instagram API access token
-  //     const instagramApiUrl = `https://graph.instagram.com/${placeName}/media?fields=id,media_type,media_url&access_token=${accessToken}`;
-
-  //     const response = await fetch(instagramApiUrl);
-
-  //     if (response.ok) {
-  //       const data = await response.json();
-
-  //       const videos = data.data.filter(
-  //         (video) => video.media_type === "VIDEO"
-  //       );
-
-  //       const sidebarVideos = videos.map((video) => {
-  //         return {
-  //           id: video.id,
-  //           url: video.media_url,
-  //         };
-  //       });
-
-  //       setSidebarVideos(sidebarVideos);
-  //     } else {
-  //       throw new Error("Error retrieving Instagram videos");
-  //     }
-  //   } catch (error) {
-  //     console.error("Error retrieving Instagram videos:", error);
-  //   }
-  // };
-
-  //* dummy function
   const fetchInstagramVideos = async (placeName) => {
     try {
       // Replace with your dummy data
@@ -133,6 +99,7 @@ function App() {
       console.error("Error retrieving Instagram videos:", error);
     }
   };
+
   return (
     <>
       <Header />
@@ -143,7 +110,6 @@ function App() {
               <h1 className="fs-5 text-bg-dark p-3 text-center text-uppercase">
                 Search
               </h1>
-
               <SearchBar onSelectPlace={handleSelectPlace} />
             </div>
             <div className="col-md-6 position-relative my-3">
@@ -156,14 +122,23 @@ function App() {
                 highlightedPlace={highlightedPlace}
                 onHoverPlace={handleHoverPlace}
                 onClickPlace={handleClickPlace}
-              />
+              >
+                {/* Render PlaceMarker for each place */}
+                {searchResults.map((result) =>
+                  result.places.map((place) => (
+                    <PlaceMarker key={place.id} place={place} />
+                  ))
+                )}
+              </MapContainer>
               {selectedPlace && <PlaceMarker place={selectedPlace} />}
             </div>
             <div className="col-md-3  my-3">
               <ResultsSidebar
                 className
+                setSelectedPlace={setSelectedPlace}
                 selectedPlace={selectedPlace}
                 searchResults={searchResults}
+                handleSelectPlace={handleSelectPlace}
               ></ResultsSidebar>
               <div className=" my-3">
                 <h1 className="fs-5 mb-3 text-bg-dark p-3 text-center text-uppercase">
